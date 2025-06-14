@@ -1,11 +1,11 @@
 package hw;
 
+import java.util.ListIterator;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-
-import java.util.ListIterator;
 
 public class Controller {
 
@@ -34,6 +34,10 @@ public class Controller {
     @FXML
     void previousHistory(ActionEvent event) {
         //TODO Show the previous history segment
+        if (iterator.hasPrevious()) {
+            HistorySegment previous = iterator.previous();
+            showHistory(previous);
+        }
     }
 
     @FXML
